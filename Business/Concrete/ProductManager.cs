@@ -19,6 +19,7 @@ namespace Business.Concrete
             _productDal = productDal;
         }
 
+
         public IResult Add(Product product)
         {
 
@@ -29,13 +30,18 @@ namespace Business.Concrete
             _productDal.Add(product);
             return new Result(true, Messages.ProductAdded);
         }
+        public IResult Delete(Product product)
+        {          
+            _productDal.Delete(product);
+            return new Result(true, "Ürün silindi");
+        }
 
         public IDataResult<List<Product>> GetAll()
         {
             //İş kodları
             //Yetkisi var mı?
 
-            if (DateTime.Now.Hour == 22)
+            if (DateTime.Now.Hour == 23)
             {
                 return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
             }
