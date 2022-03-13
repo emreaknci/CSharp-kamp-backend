@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
-S
+
 namespace Core.Aspects.Autofac.Performance
 {
     public class PerformanceAspect : MethodInterception
